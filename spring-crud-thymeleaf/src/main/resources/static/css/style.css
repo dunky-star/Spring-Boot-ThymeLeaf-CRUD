@@ -33,6 +33,21 @@ body {
     width: 70%;
 }
 
+.section {
+    border: 1px solid rgba(200, 200, 200, 0.9);
+    min-height: 500px;
+}
+
+#section1{
+    background-image: url(../img/image1.jpg);
+    background-size: cover;
+}
+
+#section1 .wrap{
+    margin-top: 90px;
+}
+
+
 #footer {
     background-color: #333;
     color: #fff;

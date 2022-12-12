@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Building a table in Thymeleaf.</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+<div class="container">
+    <section id="section1" class="section">
+        <div class="wrap">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="tempEmployee: $employees"></tr>
+                    <td th:text="${tempEmployee.firstName}"></td>
+                    <td th:text="${tempEmployee.lastName}"></td>
+                    <td th:text="${tempEmployee.email}"></td>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>
+</body>
+</html>
