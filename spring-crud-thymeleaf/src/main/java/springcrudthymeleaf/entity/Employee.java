@@ -19,7 +19,7 @@ public class Employee {
     private String email;
 
     // Default constructor
-    Employee(){}
+    public Employee(){}
 
     // Args constructor
     public Employee(int id, String firstName, String lastName, String email) {
