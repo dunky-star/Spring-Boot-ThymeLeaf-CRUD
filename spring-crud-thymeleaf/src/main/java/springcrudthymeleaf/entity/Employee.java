@@ -1,14 +1,27 @@
-package springcrudthymeleaf.model;
+package springcrudthymeleaf.entity;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name="employee")
 public class Employee {
+
+    // define fields
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Column(name="id")
     private int id;
+    @Column(name="first_name")
     private String firstName;
+    @Column(name="last_name")
     private String lastName;
+    @Column(name="email")
     private String email;
+
     // Default constructor
     Employee(){}
 
-    // Parametrized constructor
+    // Args constructor
     public Employee(int id, String firstName, String lastName, String email) {
         this.id = id;
         this.firstName = firstName;
@@ -16,7 +29,13 @@ public class Employee {
         this.email = email;
     }
 
-    // Getters and Setters
+    public Employee(String firstName, String lastName, String email) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+    }
+
+    // define getter/setter
 
     public int getId() {
         return id;
@@ -52,13 +71,10 @@ public class Employee {
 
     // ToString method
 
+
+    // define tostring
     @Override
     public String toString() {
-        return "Employee{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+        return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
     }
 }
