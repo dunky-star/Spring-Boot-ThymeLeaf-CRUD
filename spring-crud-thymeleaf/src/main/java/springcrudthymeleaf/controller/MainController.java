@@ -86,4 +86,15 @@ public class MainController {
         // use a redirect to prevent duplicate submissions incase a user hits reloads on the browser.
         return "redirect:/employees/list";
     }
+
+    @GetMapping("/delete")
+    public String delete(@RequestParam("employeeId") int theId) {
+
+        // delete the employee
+        employeeService.deleteById(theId);
+
+        // redirect to /employees/list
+        return "redirect:/employees/list";
+
+    }
 }
